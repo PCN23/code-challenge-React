@@ -179,7 +179,7 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    return arr.filter((vehicle => vehicle.type === 'car'));
 }
 
 /*
@@ -192,7 +192,7 @@ Output:
 */
 
 export function getChevyCars(arr) {
-    return [];
+    return arr.filter(vehicle => vehicle.make === 'chevy' && vehicle.type === 'car');
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -209,7 +209,9 @@ Output:
  */
 
 export function makeModelsStringWithReduce(arr) {
-    return '';
+    return arr.reduce((acc, vehicle) => {
+        return acc + vehicle.model;
+    }, '');
 }
 
 /*
